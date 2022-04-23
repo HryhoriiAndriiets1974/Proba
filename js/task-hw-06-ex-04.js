@@ -4,11 +4,11 @@ const button = document.querySelectorAll("button");
 
 button[0].addEventListener("click", () => {
   counterValue.textContent -= 1;
-
 });
+
 button[1].addEventListener("click", () => {
   counterValue.textContent =
-  parseInt(document.querySelector("#value").textContent) + 1;
+  parseInt(counterValue.textContent) + 1;
 });
 // ---------------------- 2 new
 // const counterValue = {
