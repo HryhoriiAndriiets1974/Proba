@@ -35,7 +35,7 @@ const fetchUserFromServer = username => {
 
     setTimeout(() => {
       // Change value of isSuccess variable to simulate request status
-      const isSuccess = true;
+      const isSuccess = Math.random() > 0.5;
 
       if (isSuccess) {
         resolve("success value");
@@ -46,18 +46,9 @@ const fetchUserFromServer = username => {
   });
 };
 
-fetchUserFromServer("Mango1")
+for (let i = 1; i <= 10; i += 1) {
+fetchUserFromServer(`"Mango= ${i}`)
   .then(user => console.log(user))
-  .catch(error => console.error(error));
+  .catch(error => console.error(error));};
 
-  fetchUserFromServer("Mango2")
-  .then(user => console.log(user))
-  .catch(error => console.error(error));
 
-  fetchUserFromServer("Mango3")
-  .then(user => console.log(user))
-  .catch(error => console.error(error));
-
-fetchUserFromServer("")
-  .then(user => console.log(user))
-  .catch(error => console.error(error));
