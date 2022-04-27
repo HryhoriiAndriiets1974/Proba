@@ -29,3 +29,35 @@ button[1].addEventListener("click", () => {
 //   value.textContent = counterValue.value;
 // };
 // btnElDec.addEventListener('click', btnElDecClick);
+const fetchUserFromServer = username => {
+  return new Promise((resolve, reject) => {
+    console.log(`Fetching data for ${username}`);
+
+    setTimeout(() => {
+      // Change value of isSuccess variable to simulate request status
+      const isSuccess = true;
+
+      if (isSuccess) {
+        resolve("success value");
+      } else {
+        reject("error");
+      }
+    }, 2000);
+  });
+};
+
+fetchUserFromServer("Mango1")
+  .then(user => console.log(user))
+  .catch(error => console.error(error));
+
+  fetchUserFromServer("Mango2")
+  .then(user => console.log(user))
+  .catch(error => console.error(error));
+
+  fetchUserFromServer("Mango3")
+  .then(user => console.log(user))
+  .catch(error => console.error(error));
+
+fetchUserFromServer("")
+  .then(user => console.log(user))
+  .catch(error => console.error(error));
